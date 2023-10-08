@@ -1,3 +1,6 @@
+package tn.esprit.gestionzoo.main;
+import tn.esprit.gestionzoo.entities.Zoo;
+import tn.esprit.gestionzoo.entities.Animal;
 public class ZooManagement {
 
     public static void main(String[] arg)
@@ -36,6 +39,8 @@ public class ZooManagement {
 
         Zoo zoo = Zoo.comparerZoo(myZoo, myZoo2);
         System.out.println(zoo);
+
+
 
     }
 }

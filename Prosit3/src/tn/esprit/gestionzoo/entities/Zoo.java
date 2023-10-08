@@ -1,8 +1,30 @@
+package tn.esprit.gestionzoo.entities;
+import java.util.Objects;
+
 public class Zoo {
-    Animal[] animals;
-    String name;
-    String city;
-    final int nbrCages = 25;
+    private Animal[] animals;
+    private String name;
+    private String city;
+    private final int nbrCages = 25;
+
+    public Animal[] getAnimals() {return animals;}
+    public String getName() {return name;}
+    public String getCity() {return city;}
+    public int getNbrCages() {return nbrCages;}
+
+    public void setAnimals(Animal[] animals) {
+        this.animals = animals;
+    }
+
+    public void setName(String name) {
+        if(!Objects.equals(name, " ")) {
+            this.name = name;
+        }
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
 
     public Zoo(String name, String city)
     {
@@ -21,8 +43,8 @@ public class Zoo {
         String s = name+ " "+ city+ " "+ nbrCages;
         return s;
     }
-    boolean addAnimal(Animal animal){
-        if(searchAnimal(animal)==-1 && animals.length<25) {
+    public boolean addAnimal(Animal animal){
+        if(searchAnimal(animal)==-1 && !isZooFull()) {
             Animal[] animals2 = new Animal[animals.length + 1];
             System.arraycopy(animals, 0, animals2, 0, animals.length);
             animals2[animals2.length - 1] = animal;
@@ -32,19 +54,19 @@ public class Zoo {
         else
             return false;
     }
-    void printAnimals()
+    public void printAnimals()
     {
         for(int i=0; i<animals.length; i++)
             System.out.println(animals[i]);
     }
-    int searchAnimal(Animal animal) {
+    public int searchAnimal(Animal animal) {
         for(int i=0; i<animals.length; i++) {
-            if(animal.name.equals(animals[i].name))
+            if(animal.getName().equals(animals[i].getName()))
                  return i+1;
         }
         return -1;
     }
-    boolean removeAnimal(Animal animal) {
+    public boolean removeAnimal(Animal animal) {
         int indice = searchAnimal(animal);
         int j=0;
         if(indice != -1) {
@@ -62,10 +84,10 @@ public class Zoo {
             return false;
     }
 
-    boolean isZooFull() {
+    public boolean isZooFull() {
         return animals.length == nbrCages;
     }
-    static Zoo comparerZoo(Zoo z1, Zoo z2) {
+    public static Zoo comparerZoo(Zoo z1, Zoo z2) {
         if(z1.animals.length > z2.animals.length)
             return z1;
         else return z2;
