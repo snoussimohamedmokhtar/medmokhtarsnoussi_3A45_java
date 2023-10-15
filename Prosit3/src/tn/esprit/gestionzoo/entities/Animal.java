@@ -19,6 +19,7 @@ public class Animal {
         }
     }
     public void setIsMammal(boolean newIsMammal){isMammal = newIsMammal;}
+    Animal(){};
     public Animal (String family, String name, int age, boolean isMammal)
     {
         this.family = family;

@@ -1,6 +1,6 @@
 package tn.esprit.gestionzoo.main;
-import tn.esprit.gestionzoo.entities.Zoo;
-import tn.esprit.gestionzoo.entities.Animal;
+import tn.esprit.gestionzoo.entities.*;
+
 public class ZooManagement {
 
     public static void main(String[] arg)
@@ -15,11 +15,11 @@ public class ZooManagement {
         System.out.println(myZoo);
         //System.out.println(myZoo.toString());
         System.out.println(lion1);
-        myZoo.addAnimal(lion1);
+        /*myZoo.addAnimal(lion1);
         myZoo.addAnimal(lion2);
         myZoo.addAnimal(hipo1);
         myZoo.printAnimals();
-        /*int indice = myZoo.searchAnimal(hipo1);
+        int indice = myZoo.searchAnimal(hipo1);
         int indice2 = myZoo.searchAnimal(eagle1);
         if(indice!=-1)
             System.out.println("hipo1 found !!");
@@ -32,13 +32,28 @@ public class ZooManagement {
         else
             System.out.println("eagle1 not found :'(");*/
 
-        myZoo.removeAnimal(hipo1);
+        /*myZoo.removeAnimal(hipo1);
         System.out.println(myZoo);
         if(myZoo.isZooFull())
             System.out.println("this zoo is full!!");
 
         Zoo zoo = Zoo.comparerZoo(myZoo, myZoo2);
-        System.out.println(zoo);
+        System.out.println(zoo);*/
+
+        Aquatic aqua1 = new Aquatic("fish", "kayo", 12, false, "sea");
+        Terrestrial terre1 = new Terrestrial("turtle", "gogo", 40, false, 4);
+        Dolphin dolph1 = new Dolphin("dolphin", "fafa", 3, true, "sea", 37);
+        Penguin peng1 = new Penguin("penguin", "eco", 2, false, "ice", 100);
+        System.out.println(aqua1);
+        System.out.println(terre1);
+        System.out.println(dolph1);
+        System.out.println(peng1);
+
+        aqua1.swim();
+        dolph1.swim();
+        peng1.swim();
+
+        
 
 
 
